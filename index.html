@@ -57,8 +57,19 @@
       </h1>
 
       <!-- Navigation Menu -->
-      <nav>
-        <ul class="flex space-x-6">
+      <nav class="relative">
+        <!-- Tombol Hamburger -->
+        <div class="md:hidden">
+          <button
+            id="menu-btn"
+            class="text-gray-700 hover:text-black focus:outline-none p-2"
+          >
+            ☰
+          </button>
+        </div>
+
+        <!-- Menu Utama -->
+        <ul id="menu" class="hidden md:flex space-x-6">
           <li>
             <a href="#dashboard" class="text-gray-700 hover:text-black"
               >Dashboard</a
@@ -83,7 +94,70 @@
             <a href="#skills" class="text-gray-700 hover:text-black">Skills</a>
           </li>
         </ul>
+
+        <!-- Dropdown untuk layar kecil -->
+        <div
+          id="dropdown"
+          class="hidden absolute top-full right-0 bg-white/80 backdrop-blur-md shadow-md md:hidden min-w-max rounded-lg"
+        >
+          <ul class="flex flex-col space-y-2 p-4">
+            <li>
+              <a
+                href="#dashboard"
+                class="block text-gray-700 hover:text-black px-6 py-2"
+                >Dashboard</a
+              >
+            </li>
+            <li>
+              <a
+                href="#education"
+                class="block text-gray-700 hover:text-black px-6 py-2"
+                >Education</a
+              >
+            </li>
+            <li>
+              <a
+                href="#work-experience"
+                class="block text-gray-700 hover:text-black px-6 py-2"
+                >Work Experience</a
+              >
+            </li>
+            <li>
+              <a
+                href="#project"
+                class="block text-gray-700 hover:text-black px-6 py-2"
+                >Project</a
+              >
+            </li>
+            <li>
+              <a
+                href="#skills"
+                class="block text-gray-700 hover:text-black px-6 py-2"
+                >Skills</a
+              >
+            </li>
+          </ul>
+        </div>
       </nav>
+
+      <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const dropdown = document.getElementById("dropdown");
+
+        menuBtn.addEventListener("click", (event) => {
+          event.stopPropagation(); // Mencegah event klik menyebar ke document
+          dropdown.classList.toggle("hidden");
+        });
+
+        document.addEventListener("click", (event) => {
+          if (
+            !dropdown.contains(event.target) &&
+            !menuBtn.contains(event.target)
+          ) {
+            dropdown.classList.add("hidden");
+          }
+        });
+      </script>
     </header>
     <!-- Section 1 -->
     <div
@@ -104,7 +178,7 @@
       ></h1>
 
       <a
-       href="/resume/RahmanUmardi.pdf" 
+        href="/resume/RahmanUmardi.pdf"
         download
         class="text-2xl font-bold text-gray-900 mb-4 hover:scale-110 transition-transform flex items-center space-x-2 relative group"
       >
@@ -115,7 +189,7 @@
         >
           CV Rahman Umardi
         </span>
-      </>
+      </a>
 
       <!-- Social Media Icons -->
       <div class="flex flex-col items-center mt-10">
@@ -249,317 +323,420 @@
       }
     </style>
 
-    <!-- Section 2 - Pendidikan, Bootcamp & Pengalaman Kerja -->
+    <!-- Section 2 - Pendidikan, Bootcamp -->
     <div
       id="education"
-      class="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center justify-center pt-24"
+      class="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center justify-center pt-24 px-4"
     >
       <h2
-        class="text-gray-900 text-4xl font-bold mb-10 underline decoration-4 decoration-black dark:decoration-gray-500"
+        class="text-gray-900 text-4xl font-bold mb-10 underline decoration-4 decoration-black dark:decoration-gray-500 text-center"
       >
         🎓 Education & Bootcamp
       </h2>
 
-     <!-- Pendidikan & Bootcamp dalam Satu Kotak (Vertikal, Tanpa Garis) -->
-<div class="bg-gray-400 p-6 rounded-lg shadow-lg space-y-6">
-  <!-- Pendidikan -->
-  <div>
-    <ul class="space-y-3">
-      <li class="flex flex-col">
-        <div class="flex items-start space-x-3">
-          <img src="image/unindra.png" alt="Unindra" class="w-[300px] h-[100px]" />
-          <div class="text-left w-full">
-            <p class="text-gray-900 font-semibold">Universitas Indraprasta PGRI</p>
-            <p class="text-gray-800 text-sm">Informatics Engineering</p>
-            <p class="text-gray-700 text-xs">(2022 - Until Now)</p>
-          </div>
+      <!-- Pendidikan & Bootcamp dalam Satu Kotak -->
+      <div
+        class="bg-gray-400 p-6 rounded-lg shadow-lg space-y-6 w-full max-w-3xl"
+      >
+        <!-- Pendidikan -->
+        <div>
+          <ul class="space-y-6">
+            <li
+              class="flex flex-col md:flex-row items-center md:items-start space-y-3 md:space-y-0 md:space-x-3"
+            >
+              <img
+                src="image/unindra.png"
+                alt="Unindra"
+                class="w-[200px] h-auto md:w-[300px] md:h-[100px]"
+              />
+              <div class="text-center md:text-left w-full">
+                <p class="text-gray-900 font-semibold">
+                  Universitas Indraprasta PGRI
+                </p>
+                <p class="text-gray-800 text-sm">Informatics Engineering</p>
+                <p class="text-gray-700 text-xs">(2022 - Until Now)</p>
+              </div>
+            </li>
+          </ul>
         </div>
-      </li>
-    </ul>
-  </div>
 
-  <!-- Bootcamp -->
-  <div>
-    <ul class="space-y-3">
-      <li class="flex flex-col">
-        <div class="flex items-start space-x-3">
-          <img src="image/enigma.png" alt="Enigma Camp" class="w-[300px] h-[100px]" />
-          <div class="text-left w-full">
-            <p class="text-gray-900 font-semibold">Enigma Camp</p>
-            <p class="text-gray-800 text-sm">Backend Development with Golang</p>
-            <p class="text-gray-700 text-xs">(2024)</p>
-          </div>
+        <!-- Bootcamp -->
+        <div>
+          <ul class="space-y-6">
+            <li
+              class="flex flex-col md:flex-row items-center md:items-start space-y-3 md:space-y-0 md:space-x-3"
+            >
+              <img
+                src="image/enigma.png"
+                alt="Enigma Camp"
+                class="w-[200px] h-auto md:w-[300px] md:h-[100px]"
+              />
+              <div class="text-center md:text-left w-full">
+                <p class="text-gray-900 font-semibold">Enigma Camp</p>
+                <p class="text-gray-800 text-sm">
+                  Backend Development with Golang
+                </p>
+                <p class="text-gray-700 text-xs">(2024)</p>
+              </div>
+            </li>
+          </ul>
         </div>
-      </li>
-    </ul>
-  </div>
-</div>
+      </div>
+    </div>
 
-    <!-- Section 3 -->
+    <!-- Section 3 - Pengalaman Kerja -->
     <div
       id="work-experience"
-      class="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center justify-center pt-24"
+      class="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center justify-center pt-24 px-4"
     >
       <h2
-        class="text-gray-900 text-4xl font-bold mb-10 underline decoration-4 decoration-black dark:decoration-gray-500"
+        class="text-gray-900 text-4xl font-bold mb-10 underline decoration-4 decoration-black dark:decoration-gray-500 text-center"
       >
         🏢 Work Experience
       </h2>
+
       <!-- Pengalaman Kerja -->
-      <div class="bg-gray-400 p-6 rounded-lg shadow-lg">
-        <!-- <h3 class="text-2xl font-bold text-yellow-300">💼 Work Experience</h3> -->
-        <ul class="mt-3 space-y-3">
-          <li class="flex flex-col">
-            <div class="flex items-start space-x-3">
-              <img
-                src="image/yamaha.png"
-                alt="Yamaha"
-                class="w-[100x] h-[100px]"
-              />
-              <div class="text-left">
-                <span class="text-gray-900 font-semibold block"
-                  >PT Yamaha Music Manufacturing Asia</span
-                >
-                <span class="text-gray-800 text-sm block"
-                  >Production Operator</span
-                >
-                <span class="text-gray-700 text-xs block">(2020 - 2023)</span>
-              </div>
+      <div class="bg-gray-400 p-6 rounded-lg shadow-lg w-full max-w-3xl">
+        <ul class="mt-3 space-y-6">
+          <!-- Yamaha Music Manufacturing Asia -->
+          <li
+            class="flex flex-col md:flex-row items-center md:items-start space-y-3 md:space-y-0 md:space-x-3"
+          >
+            <img
+              src="image/yamaha.png"
+              alt="Yamaha"
+              class="w-[80px] h-auto md:w-[100px] md:h-[100px]"
+            />
+            <div class="text-center md:text-left w-full">
+              <span class="text-gray-900 font-semibold block"
+                >PT Yamaha Music Manufacturing Asia</span
+              >
+              <span class="text-gray-800 text-sm block"
+                >Production Operator</span
+              >
+              <span class="text-gray-700 text-xs block">(2020 - 2023)</span>
             </div>
           </li>
-          <li class="flex flex-col">
-            <div class="flex items-start space-x-3">
-              <img
-                src="image/yamaha.png"
-                alt="Yamaha"
-                class="w-[100x] h-[100px]"
-              />
-              <div class="text-left">
-                <span class="text-gray-900 font-semibold block"
-                  >PT Yamaha Musical Products Asia</span
-                >
-                <span class="text-gray-800 text-sm block"
-                  >Production Operator</span
-                >
-                <span class="text-gray-700 text-xs block">(2023 - 2024)</span>
-              </div>
+
+          <!-- Yamaha Musical Products Asia -->
+          <li
+            class="flex flex-col md:flex-row items-center md:items-start space-y-3 md:space-y-0 md:space-x-3"
+          >
+            <img
+              src="image/yamaha.png"
+              alt="Yamaha"
+              class="w-[80px] h-auto md:w-[100px] md:h-[100px]"
+            />
+            <div class="text-center md:text-left w-full">
+              <span class="text-gray-900 font-semibold block"
+                >PT Yamaha Musical Products Asia</span
+              >
+              <span class="text-gray-800 text-sm block"
+                >Production Operator</span
+              >
+              <span class="text-gray-700 text-xs block">(2023 - 2024)</span>
             </div>
           </li>
-          <li class="flex flex-col">
-            <div class="flex items-start space-x-3">
-              <img
-                src="image/roxy.png"
-                alt="Roxy Group"
-                class="w-[100x] h-[100px]"
-              />
-              <div class="text-left">
-                <span class="text-gray-900 font-semibold block"
-                  >PT Kreanova Pharmaret (Roxy Group)</span
-                >
-                <span class="text-gray-800 text-sm block"
-                  >Backend Developer</span
-                >
-                <span class="text-gray-700 text-xs block"
-                  >(2024 - Until Now)</span
-                >
-              </div>
+
+          <!-- Roxy Group -->
+          <li
+            class="flex flex-col md:flex-row items-center md:items-start space-y-3 md:space-y-0 md:space-x-3"
+          >
+            <img
+              src="image/roxy.png"
+              alt="Roxy Group"
+              class="w-[80px] h-auto md:w-[100px] md:h-[100px]"
+            />
+            <div class="text-center md:text-left w-full">
+              <span class="text-gray-900 font-semibold block"
+                >PT Kreanova Pharmaret (Roxy Group)</span
+              >
+              <span class="text-gray-800 text-sm block">Backend Developer</span>
+              <span class="text-gray-700 text-xs block"
+                >(2024 - Until Now)</span
+              >
             </div>
           </li>
         </ul>
       </div>
     </div>
+
     <!-- Section 4 -->
     <!-- Project Section -->
     <div
       id="project"
-      class="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center justify-center pt-24"
+      class="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center justify-start pt-24 px-4"
     >
       <h2
-        class="text-gray-900 text-4xl font-bold mb-10 underline decoration-4 decoration-black dark:decoration-gray-500"
+        class="text-gray-900 text-4xl font-bold mb-10 underline decoration-4 decoration-black dark:decoration-gray-500 text-center"
       >
         💼 My Projects
       </h2>
 
-      <div class="space-y-12 w-4/5">
+      <div class="w-full max-w-5xl px-4 flex-grow">
         <!-- Project 1 -->
         <div
-          class="flex flex-wrap md:flex-nowrap bg-gray-400 p-6 rounded-lg shadow-lg overflow-hidden items-center"
+          class="flex flex-col md:flex-row bg-gray-400 p-6 rounded-lg shadow-lg"
         >
           <!-- Image -->
-          <div class="w-full md:w-1/3 flex justify-center">
+          <div class="w-full md:w-1/2 flex justify-center">
             <img
               src="image/Screenshot 2025-03-12 132001.png"
               alt="Project 1"
-              class="w-full h-full object-contain rounded-lg"
+              class="w-full max-h-[400px] object-contain rounded-lg"
             />
           </div>
 
           <!-- Description -->
-          <div class="p-6 md:w-2/3 flex flex-col justify-between">
+          <div class="p-4 md:w-1/2 flex flex-col justify-between">
             <div>
-              <h3 class="text-2xl font-bold text-gray-900">
+              <h3
+                class="text-2xl font-bold text-gray-900 text-center md:text-left"
+              >
                 OMS E-Commerce Roxy
               </h3>
-              <p class="text-gray-700 mt-2">
+              <p
+                class="text-gray-700 mt-2 text-sm md:text-base text-center md:text-left break-words"
+              >
                 Order Management System (OMS) is a system used to manage the
                 ordering process, from order creation to delivery and
                 completion.
               </p>
 
               <!-- Integration -->
-              <div class="mt-10 flex space-x-6 items-center">
-                <h4 class="text-xl font-semibold text-gray-900">
+              <div class="mt-6">
+                <h4
+                  class="text-xl font-semibold text-gray-900 text-center md:text-left"
+                >
                   Integration:
                 </h4>
-                <img
-                  src="image/biteship.png"
-                  alt="biteship"
-                  class="w-13 h-12"
-                />
-                <img src="image/xendit.png" alt="xendit" class="w-13 h-12" />
+                <div
+                  class="flex justify-center md:justify-start mt-4 space-x-6"
+                >
+                  <img
+                    src="image/biteship.png"
+                    alt="biteship"
+                    class="w-13 h-10"
+                  />
+                  <img src="image/xendit.png" alt="xendit" class="w-13 h-10" />
+                </div>
               </div>
             </div>
 
             <!-- Tech Stack -->
-            <div class="mt-10 flex space-x-6 items-center">
-              <h4 class="text-xl font-semibold text-gray-900">Tech Stack:</h4>
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
-                alt="Golang"
-                class="w-12 h-12"
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
-                alt="Next.js"
-                class="w-12 h-12"
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
-                alt="PostgreSQL"
-                class="w-12 h-12"
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
-                alt="Redis"
-                class="w-12 h-12"
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original-wordmark.svg"
-                alt="firebase"
-                class="w-12 h-12"
-              />
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-                alt="aws"
-                class="w-12 h-12"
-              />
+            <div class="mt-6">
+              <h4
+                class="text-xl font-semibold text-gray-900 text-center md:text-left"
+              >
+                Tech Stack:
+              </h4>
+              <div class="relative w-full overflow-hidden">
+                <div class="flex tech-stack-slider">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
+                    alt="Golang"
+                    class="w-12 h-12 mx-4"
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
+                    alt="Next.js"
+                    class="w-12 h-12 mx-4"
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
+                    alt="PostgreSQL"
+                    class="w-12 h-12 mx-4"
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
+                    alt="Redis"
+                    class="w-12 h-12 mx-4"
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original-wordmark.svg"
+                    alt="Firebase"
+                    class="w-12 h-12 mx-4"
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                    alt="AWS"
+                    class="w-12 h-12 mx-4"
+                  />
+                  <!-- Duplikasi untuk seamless scrolling -->
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
+                    alt="Golang"
+                    class="w-12 h-12 mx-4"
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
+                    alt="Next.js"
+                    class="w-12 h-12 mx-4"
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
+                    alt="PostgreSQL"
+                    class="w-12 h-12 mx-4"
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
+                    alt="Redis"
+                    class="w-12 h-12 mx-4"
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original-wordmark.svg"
+                    alt="Firebase"
+                    class="w-12 h-12 mx-4"
+                  />
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                    alt="AWS"
+                    class="w-12 h-12 mx-4"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+    <style>
+      .tech-stack-slider {
+        display: flex;
+        animation: scrollLeft 10s linear infinite;
+        width: max-content;
+      }
+
+      @keyframes scrollLeft {
+        from {
+          transform: translateX(0%);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+
     <!-- Section Skills -->
     <div
       id="skills"
-      class="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center justify-center pt-24"
+      class="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center justify-center pt-24 px-4"
     >
       <h2
-        class="text-gray-900 text-4xl font-bold mb-6 underline decoration-4 decoration-black dark:decoration-gray-500"
+        class="text-gray-900 text-3xl md:text-4xl font-bold mb-6 underline decoration-4 decoration-black dark:decoration-gray-500"
       >
         🛠️ Skills
       </h2>
 
-      <div class="logo-container">
-        <div class="logo-track">
+      <div class="logo-container max-w-screen-lg w-full overflow-hidden">
+        <div class="logo-track flex gap-8">
           <!-- Golang (Favorit) -->
-          <div class="relative flex items-center justify-center">
+          <div class="flex items-center justify-center">
             <img
-              class="h-[150px]"
+              class="h-16 md:h-24 lg:h-32"
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
               alt="Golang"
             />
           </div>
 
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
             alt="Redis"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
             alt="PostgreSQL"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
             alt="HTML"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"
             alt="CSS"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"
             alt="Docker"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"
             alt="Java"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
             alt="JavaScript"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"
             alt="Git"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
             alt="Linux"
           />
 
-          <!-- Duplikasi untuk scrolling -->
-          <div class="relative flex items-center justify-center">
+          <!-- Duplikasi untuk efek scrolling -->
+          <div class="flex items-center justify-center">
             <img
-              class="h-[150px]"
+              class="h-16 md:h-24 lg:h-32"
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
               alt="Golang"
             />
           </div>
 
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
             alt="Redis"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
             alt="PostgreSQL"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
             alt="HTML"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"
             alt="CSS"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"
             alt="Docker"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"
             alt="Java"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
             alt="JavaScript"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"
             alt="Git"
           />
           <img
+            class="h-16 md:h-24 lg:h-32"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
             alt="Linux"
           />
@@ -568,22 +745,13 @@
 
       <style>
         .logo-container {
-          overflow: hidden;
-          width: 1000px;
-          white-space: nowrap;
           position: relative;
+          white-space: nowrap;
         }
 
         .logo-track {
-          display: flex;
-          gap: 20px;
           animation: scrollLeft 20s linear infinite;
           width: max-content;
-        }
-
-        .logo-track img {
-          height: 150px;
-          width: auto;
         }
 
         @keyframes scrollLeft {
