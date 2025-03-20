@@ -162,25 +162,26 @@
     <!-- Section 1 -->
     <div
       id="dashboard"
-      class="min-h-screen w-screen bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center justify-center pt-24"
+      class="min-h-screen w-full bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center justify-center pt-24 px-4"
     >
       <!-- Foto Profil -->
       <img
         src="image/profil.jpeg"
         alt="Rahman"
-        class="w-40 h-40 object-fit bg-cover rounded-full border-4 border-white shadow-lg"
+        class="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-full border-4 border-white shadow-lg"
       />
 
       <!-- Nama & Profesi (Akan Diketik) -->
       <h1
         id="typing-text"
-        class="text-gray-900 text-4xl font-bold mb-2 decoration-black"
+        class="text-gray-900 text-2xl sm:text-4xl font-bold mb-2 decoration-black text-center"
       ></h1>
 
+      <!-- Resume Download Button -->
       <a
         href="/resume/RahmanUmardi.pdf"
         download
-        class="text-2xl font-bold text-gray-900 mb-4 hover:scale-110 transition-transform flex items-center space-x-2 relative group"
+        class="text-xl sm:text-2xl font-bold text-gray-900 mt-4 hover:scale-110 transition-transform flex items-center space-x-2 relative group"
       >
         <i class="fas fa-file-alt text-gray-900"></i>
         <span>Resume</span>
@@ -192,18 +193,18 @@
       </a>
 
       <!-- Social Media Icons -->
-      <div class="flex flex-col items-center mt-10">
-        <h3 class="text-2xl font-bold text-gray-900 mb-4">
+      <div class="flex flex-col items-center mt-10 w-full">
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
           <i class="fas fa-globe text-gray-900"></i>
           <span>Social Media</span>
         </h3>
 
-        <div class="flex space-x-4">
+        <div class="flex flex-wrap justify-center gap-4">
           <!-- LinkedIn -->
           <a
             href="https://www.linkedin.com/in/rahman-umardi-9a750b25b/"
             target="_blank"
-            class="relative group text-gray-900 text-3xl hover:scale-110 transition-transform"
+            class="relative group text-gray-900 text-2xl sm:text-3xl hover:scale-110 transition-transform"
           >
             <i class="fab fa-linkedin"></i>
             <span
@@ -216,7 +217,7 @@
           <!-- Gmail -->
           <a
             href="mailto:rahmanumardi@gmail.com"
-            class="relative group text-gray-900 text-3xl hover:scale-110 transition-transform"
+            class="relative group text-gray-900 text-2xl sm:text-3xl hover:scale-110 transition-transform"
           >
             <i class="fas fa-envelope"></i>
             <span
@@ -230,7 +231,7 @@
           <a
             href="https://github.com/RahmanUmardi"
             target="_blank"
-            class="relative group text-gray-900 text-3xl hover:scale-110 transition-transform"
+            class="relative group text-gray-900 text-2xl sm:text-3xl hover:scale-110 transition-transform"
           >
             <i class="fab fa-github"></i>
             <span
@@ -244,7 +245,7 @@
           <a
             href="https://wa.me/6281284502736"
             target="_blank"
-            class="relative group text-gray-900 text-3xl hover:scale-110 transition-transform"
+            class="relative group text-gray-900 text-2xl sm:text-3xl hover:scale-110 transition-transform"
           >
             <i class="fab fa-whatsapp"></i>
             <span
@@ -262,9 +263,9 @@
         "Hi, My name is Rahman Umardi",
         "I am a Backend Developer",
       ];
-      const typingSpeed = 150; // Kecepatan mengetik (ms)
-      const deletingSpeed = 80; // Kecepatan menghapus (ms)
-      const delayBetweenTexts = 2000; // Delay setelah mengetik penuh (ms)
+      const typingSpeed = 150;
+      const deletingSpeed = 80;
+      const delayBetweenTexts = 2000;
       let textIndex = 0;
       let charIndex = 0;
       let isDeleting = false;
@@ -274,7 +275,6 @@
         const currentText = textArray[textIndex];
 
         if (!isDeleting) {
-          // Ketik teks
           typingElement.innerHTML =
             currentText.slice(0, charIndex + 1) +
             '<span class="cursor">|</span>';
@@ -286,14 +286,13 @@
             setTimeout(typeEffect, typingSpeed);
           }
         } else {
-          // Hapus teks
           typingElement.innerHTML =
             currentText.slice(0, charIndex - 1) +
             '<span class="cursor">|</span>';
           charIndex--;
           if (charIndex === 0) {
             isDeleting = false;
-            textIndex = (textIndex + 1) % textArray.length; // Pindah ke teks berikutnya
+            textIndex = (textIndex + 1) % textArray.length;
             setTimeout(typeEffect, typingSpeed);
           } else {
             setTimeout(typeEffect, deletingSpeed);
@@ -504,25 +503,17 @@
               </p>
 
               <!-- Integration -->
-              <div class="mt-6">
-                <h4
-                  class="text-xl font-semibold text-gray-900 text-center md:text-left"
-                >
-                  Integration:
-                </h4>
-                <div
-                  class="flex justify-center md:justify-start mt-4 space-x-6"
-                >
-                  <img
-                    src="image/biteship.png"
-                    alt="biteship"
-                    class="w-13 h-10"
-                  />
-                  <img src="image/xendit.png" alt="xendit" class="w-13 h-10" />
-                </div>
+            <div class="mt-6">
+              <h4 class="text-xl font-semibold text-gray-900 text-center md:text-left">
+                Integration:
+              </h4>
+              <div class="flex flex-wrap justify-center md:justify-start mt-4 gap-4">
+                <img src="image/biteship.png" alt="biteship"
+                  class="max-w-[150px] md:max-w-[200px] h-auto object-contain" />
+                <img src="image/xendit.png" alt="xendit"
+                  class="max-w-[150px] md:max-w-[200px] h-auto object-contain" />
               </div>
             </div>
-
             <!-- Tech Stack -->
             <div class="mt-6">
               <h4
