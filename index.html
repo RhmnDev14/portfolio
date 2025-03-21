@@ -43,15 +43,14 @@
       }
     </style>
   </head>
-  <body class="bg-gray-100 dark:bg-gray-900 overflow-auto">
-    <!-- Header -->
+  <body class="bg-white dark:bg-white overflow-auto">
     <!-- Header -->
     <header
-      class="backdrop-blur-md bg-white/30 shadow-md py-4 px-8 flex justify-between items-center fixed w-full top-0 z-10"
+      class="backdrop-blur-md bg-white/30 shadow-md py-4 px-6 flex justify-between items-center fixed top-0 left-0 w-full z-50"
     >
       <!-- Logo -->
       <h1
-        class="text-3xl font-bold bg-gradient-to-r from-gray-200 via-gray-400 to-gray-700 bg-clip-text text-transparent tracking-wide"
+        class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-gray-200 via-gray-400 to-gray-700 bg-clip-text text-transparent tracking-wide"
       >
         PORTFOLIO
       </h1>
@@ -98,7 +97,7 @@
         <!-- Dropdown untuk layar kecil -->
         <div
           id="dropdown"
-          class="hidden absolute top-full right-0 bg-white/80 backdrop-blur-md shadow-md md:hidden min-w-max rounded-lg"
+          class="hidden absolute top-12 right-0 bg-white/80 backdrop-blur-md shadow-md md:hidden min-w-max rounded-lg"
         >
           <ul class="flex flex-col space-y-2 p-4">
             <li>
@@ -139,26 +138,34 @@
           </ul>
         </div>
       </nav>
-
-      <script>
-        const menuBtn = document.getElementById("menu-btn");
-        const dropdown = document.getElementById("dropdown");
-
-        menuBtn.addEventListener("click", (event) => {
-          event.stopPropagation(); // Mencegah event klik menyebar ke document
-          dropdown.classList.toggle("hidden");
-        });
-
-        document.addEventListener("click", (event) => {
-          if (
-            !dropdown.contains(event.target) &&
-            !menuBtn.contains(event.target)
-          ) {
-            dropdown.classList.add("hidden");
-          }
-        });
-      </script>
     </header>
+
+    <!-- Spacer untuk menghindari header menutupi konten -->
+    <style>
+      body {
+        padding-top: 4rem;
+      }
+    </style>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const dropdown = document.getElementById("dropdown");
+
+      menuBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        dropdown.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", (event) => {
+        if (
+          !dropdown.contains(event.target) &&
+          !menuBtn.contains(event.target)
+        ) {
+          dropdown.classList.add("hidden");
+        }
+      });
+    </script>
+
     <!-- Section 1 -->
     <div
       id="dashboard"
@@ -503,87 +510,98 @@
               </p>
 
               <!-- Integration -->
-            <div class="mt-6">
-              <h4 class="text-xl font-semibold text-gray-900 text-center md:text-left">
-                Integration:
-              </h4>
-              <div class="flex flex-wrap justify-center md:justify-start mt-4 gap-4">
-                <img src="image/biteship.png" alt="biteship"
-                  class="max-w-[150px] md:max-w-[200px] h-auto object-contain" />
-                <img src="image/xendit.png" alt="xendit"
-                  class="max-w-[150px] md:max-w-[200px] h-auto object-contain" />
+              <div class="mt-6">
+                <h4
+                  class="text-xl font-semibold text-gray-900 text-center md:text-left"
+                >
+                  Integration:
+                </h4>
+                <div
+                  class="flex flex-wrap justify-center md:justify-start mt-4 gap-4"
+                >
+                  <img
+                    src="image/biteship.png"
+                    alt="biteship"
+                    class="max-w-[150px] md:max-w-[200px] h-auto object-contain"
+                  />
+                  <img
+                    src="image/xendit.png"
+                    alt="xendit"
+                    class="max-w-[150px] md:max-w-[200px] h-auto object-contain"
+                  />
+                </div>
               </div>
-            </div>
-            <!-- Tech Stack -->
-            <div class="mt-6">
-              <h4
-                class="text-xl font-semibold text-gray-900 text-center md:text-left"
-              >
-                Tech Stack:
-              </h4>
-              <div class="relative w-full overflow-hidden">
-                <div class="flex tech-stack-slider">
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
-                    alt="Golang"
-                    class="w-12 h-12 mx-4"
-                  />
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
-                    alt="Next.js"
-                    class="w-12 h-12 mx-4"
-                  />
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
-                    alt="PostgreSQL"
-                    class="w-12 h-12 mx-4"
-                  />
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
-                    alt="Redis"
-                    class="w-12 h-12 mx-4"
-                  />
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original-wordmark.svg"
-                    alt="Firebase"
-                    class="w-12 h-12 mx-4"
-                  />
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-                    alt="AWS"
-                    class="w-12 h-12 mx-4"
-                  />
-                  <!-- Duplikasi untuk seamless scrolling -->
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
-                    alt="Golang"
-                    class="w-12 h-12 mx-4"
-                  />
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
-                    alt="Next.js"
-                    class="w-12 h-12 mx-4"
-                  />
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
-                    alt="PostgreSQL"
-                    class="w-12 h-12 mx-4"
-                  />
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
-                    alt="Redis"
-                    class="w-12 h-12 mx-4"
-                  />
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original-wordmark.svg"
-                    alt="Firebase"
-                    class="w-12 h-12 mx-4"
-                  />
-                  <img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-                    alt="AWS"
-                    class="w-12 h-12 mx-4"
-                  />
+              <!-- Tech Stack -->
+              <div class="mt-6">
+                <h4
+                  class="text-xl font-semibold text-gray-900 text-center md:text-left"
+                >
+                  Tech Stack:
+                </h4>
+                <div class="relative w-full overflow-hidden">
+                  <div class="flex tech-stack-slider">
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
+                      alt="Golang"
+                      class="w-12 h-12 mx-4"
+                    />
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
+                      alt="Next.js"
+                      class="w-12 h-12 mx-4"
+                    />
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
+                      alt="PostgreSQL"
+                      class="w-12 h-12 mx-4"
+                    />
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
+                      alt="Redis"
+                      class="w-12 h-12 mx-4"
+                    />
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original-wordmark.svg"
+                      alt="Firebase"
+                      class="w-12 h-12 mx-4"
+                    />
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                      alt="AWS"
+                      class="w-12 h-12 mx-4"
+                    />
+                    <!-- Duplikasi untuk seamless scrolling -->
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
+                      alt="Golang"
+                      class="w-12 h-12 mx-4"
+                    />
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
+                      alt="Next.js"
+                      class="w-12 h-12 mx-4"
+                    />
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
+                      alt="PostgreSQL"
+                      class="w-12 h-12 mx-4"
+                    />
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
+                      alt="Redis"
+                      class="w-12 h-12 mx-4"
+                    />
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original-wordmark.svg"
+                      alt="Firebase"
+                      class="w-12 h-12 mx-4"
+                    />
+                    <img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                      alt="AWS"
+                      class="w-12 h-12 mx-4"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -620,114 +638,108 @@
         🛠️ Skills
       </h2>
 
-      <div class="logo-container max-w-screen-lg w-full overflow-hidden">
-        <div class="logo-track flex gap-8">
-          <!-- Golang (Favorit) -->
-          <div class="flex items-center justify-center">
-            <img
-              class="h-16 md:h-24 lg:h-32"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
-              alt="Golang"
-            />
-          </div>
-
+      <div class="logo-container w-full overflow-hidden relative">
+        <div class="logo-track flex items-center gap-8 min-w-max">
+          <!-- Logo list - Duplikasi untuk efek seamless -->
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
+            alt="Golang"
+          />
+          <img
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
             alt="Redis"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
             alt="PostgreSQL"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
             alt="HTML"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"
             alt="CSS"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"
             alt="Docker"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"
             alt="Java"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
             alt="JavaScript"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"
             alt="Git"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
             alt="Linux"
           />
 
-          <!-- Duplikasi untuk efek scrolling -->
-          <div class="flex items-center justify-center">
-            <img
-              class="h-16 md:h-24 lg:h-32"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
-              alt="Golang"
-            />
-          </div>
-
+          <!-- Duplikasi logo untuk efek looping seamless -->
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
+            alt="Golang"
+          />
+          <img
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
             alt="Redis"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
             alt="PostgreSQL"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
             alt="HTML"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"
             alt="CSS"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"
             alt="Docker"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"
             alt="Java"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
             alt="JavaScript"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"
             alt="Git"
           />
           <img
-            class="h-16 md:h-24 lg:h-32"
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
             alt="Linux"
           />
@@ -736,13 +748,16 @@
 
       <style>
         .logo-container {
+          width: 100%;
+          overflow: hidden;
           position: relative;
           white-space: nowrap;
         }
 
         .logo-track {
-          animation: scrollLeft 20s linear infinite;
-          width: max-content;
+          display: flex;
+          gap: 3rem; /* Sesuaikan jarak antar logo */
+          animation: scrollLeft 15s linear infinite;
         }
 
         @keyframes scrollLeft {
