@@ -17,6 +17,8 @@
     <!-- Font Awesome for Icons -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
     <script>
       document.querySelectorAll("header nav a").forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
@@ -183,9 +185,19 @@
         id="typing-text"
         class="text-gray-900 text-2xl sm:text-4xl font-bold mb-2 decoration-black text-center"
       ></h1>
+      <!-- <h1
+        class="text-xl sm:text-2xl font-bold text-gray-900 mt-4 hover:scale-110 transition-transform flex items-center space-x-2 relative group"
+      >
+        Hi, My name is Rahman Umardi 👋
+      </h1>
+      <h2
+        class="text-xl sm:text-2xl font-bold text-gray-900 mt-4 hover:scale-110 transition-transform flex items-center space-x-2 relative group"
+      >
+        A Passionate Backend Developer | Golang Enthusiast 🚀
+      </h2> -->
 
       <!-- Resume Download Button -->
-      <a
+      <!-- <a
         href="/resume/RahmanUmardi.pdf"
         download="RahmanUmardi.pdf"
         type="application/pdf"
@@ -198,7 +210,83 @@
         >
           CV Rahman Umardi
         </span>
-      </a>
+      </a> -->
+      <!-- Tombol Resume -->
+      <button
+        id="view-resume"
+        class="text-xl sm:text-2xl font-bold text-gray-900 mt-4 hover:scale-110 transition-transform flex items-center space-x-2 relative group"
+      >
+        <i class="fas fa-file-alt text-gray-900"></i>
+        <span>Resume</span>
+      </button>
+
+      <!-- Modal Resume -->
+      <div
+        id="resume-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-4"
+      >
+        <div
+          class="bg-white p-6 rounded-lg shadow-lg relative w-full max-w-4xl h-[90vh] flex flex-col"
+        >
+          <!-- Tombol Close -->
+          <button
+            id="close-modal"
+            class="absolute top-3 right-3 bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold shadow-lg hover:bg-red-700 transition-transform transform hover:scale-110"
+          >
+            &times;
+          </button>
+
+          <!-- PDF Viewer -->
+          <iframe
+            id="pdf-viewer"
+            src="/resume/RahmanUmardi.pdf"
+            class="w-full h-full"
+          ></iframe>
+
+          <!-- Tombol Download -->
+          <a
+            href="/resume/RahmanUmardi.pdf"
+            download="RahmanUmardi.pdf"
+            class="mt-4 px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition block text-center"
+          >
+            Download Resume
+          </a>
+        </div>
+      </div>
+
+      <!-- CSS -->
+      <style>
+        body.no-scroll {
+          overflow: hidden;
+        }
+      </style>
+
+      <!-- JavaScript -->
+      <script>
+        document
+          .getElementById("view-resume")
+          .addEventListener("click", function () {
+            document.getElementById("resume-modal").classList.remove("hidden");
+            document.body.classList.add("no-scroll");
+          });
+
+        document
+          .getElementById("close-modal")
+          .addEventListener("click", function () {
+            document.getElementById("resume-modal").classList.add("hidden");
+            document.body.classList.remove("no-scroll");
+          });
+
+        // Tutup modal jika klik di luar PDF
+        document
+          .getElementById("resume-modal")
+          .addEventListener("click", function (event) {
+            if (event.target === this) {
+              this.classList.add("hidden");
+              document.body.classList.remove("no-scroll");
+            }
+          });
+      </script>
 
       <!-- Social Media Icons -->
       <div class="flex flex-col items-center mt-10 w-full">
@@ -268,8 +356,8 @@
 
     <script>
       const textArray = [
-        "Hi, My name is Rahman Umardi",
-        "I am a Backend Developer",
+        "Hi, My name is Rahman Umardi 👋",
+        "A Passionate Backend Developer | Golang Enthusiast 🚀",
       ];
       const typingSpeed = 150;
       const deletingSpeed = 80;
