@@ -14,6 +14,13 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Swiper.js  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!-- Font Awesome for Icons -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
 
@@ -51,11 +58,14 @@
       class="backdrop-blur-md bg-white/30 shadow-md py-4 px-6 flex justify-between items-center fixed top-0 left-0 w-full z-50"
     >
       <!-- Logo -->
-      <h1
-        class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-gray-200 via-gray-400 to-gray-700 bg-clip-text text-transparent tracking-wide"
-      >
-        PORTFOLIO
-      </h1>
+      <div class="flex items-center space-x-4">
+        <!-- <img src="image/undraw_programming_65t2.svg" alt="Logo" class="h-12 md:h-16"> -->
+        <h1
+          class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-200 via-gray-400 to-gray-700 bg-clip-text text-transparent tracking-wide"
+        >
+          RAHMAN
+        </h1>
+      </div>
 
       <!-- Navigation Menu -->
       <nav class="relative">
@@ -239,13 +249,13 @@
           <!-- PDF Viewer -->
           <iframe
             id="pdf-viewer"
-            src="/resume/RahmanUmardi.pdf"
+            src="resume/RahmanUmardi.pdf"
             class="w-full h-full"
           ></iframe>
 
           <!-- Tombol Download -->
           <a
-            href="/resume/RahmanUmardi.pdf"
+            href="resume/RahmanUmardi.pdf"
             download="RahmanUmardi.pdf"
             class="mt-4 px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition block text-center"
           >
@@ -429,12 +439,11 @@
         🎓 Education & Bootcamp
       </h2>
 
-      <!-- Pendidikan & Bootcamp dalam Satu Kotak -->
-      <div
-        class="bg-gray-400 p-6 rounded-lg shadow-lg space-y-6 w-full max-w-3xl"
-      >
+      <div class="container mx-auto px-4">
         <!-- Pendidikan -->
-        <div>
+        <div
+          class="bg-gray-400 p-6 rounded-lg shadow-lg w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto mb-6"
+        >
           <ul class="space-y-6">
             <li
               class="flex flex-col md:flex-row items-center md:items-start space-y-3 md:space-y-0 md:space-x-3"
@@ -442,7 +451,7 @@
               <img
                 src="image/unindra.png"
                 alt="Unindra"
-                class="w-[200px] h-auto md:w-[300px] md:h-[100px]"
+                class="w-[200px] h-auto md:w-[250px] md:h-[100px]"
               />
               <div class="text-center md:text-left w-full">
                 <p class="text-gray-900 font-semibold">
@@ -456,7 +465,9 @@
         </div>
 
         <!-- Bootcamp -->
-        <div>
+        <div
+          class="bg-gray-400 p-6 rounded-lg shadow-lg w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto"
+        >
           <ul class="space-y-6">
             <li
               class="flex flex-col md:flex-row items-center md:items-start space-y-3 md:space-y-0 md:space-x-3"
@@ -464,7 +475,7 @@
               <img
                 src="image/enigma.png"
                 alt="Enigma Camp"
-                class="w-[200px] h-auto md:w-[300px] md:h-[100px]"
+                class="w-[200px] h-auto md:w-[250px] md:h-[100px]"
               />
               <div class="text-center md:text-left w-full">
                 <p class="text-gray-900 font-semibold">Enigma Camp</p>
@@ -490,11 +501,12 @@
         🏢 Work Experience
       </h2>
 
-      <!-- Pengalaman Kerja -->
-      <div class="bg-gray-400 p-6 rounded-lg shadow-lg w-full max-w-3xl">
-        <ul class="mt-3 space-y-6">
-          <!-- Yamaha Music Manufacturing Asia -->
-          <li
+      <div class="container mx-auto px-4">
+        <!-- Yamaha Music Manufacturing Asia -->
+        <div
+          class="bg-gray-400 p-6 rounded-lg shadow-lg w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto mb-6"
+        >
+          <div
             class="flex flex-col md:flex-row items-center md:items-start space-y-3 md:space-y-0 md:space-x-3"
           >
             <img
@@ -511,10 +523,14 @@
               >
               <span class="text-gray-700 text-xs block">(2020 - 2023)</span>
             </div>
-          </li>
+          </div>
+        </div>
 
-          <!-- Yamaha Musical Products Asia -->
-          <li
+        <!-- Yamaha Musical Products Asia -->
+        <div
+          class="bg-gray-400 p-6 rounded-lg shadow-lg w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto mb-6"
+        >
+          <div
             class="flex flex-col md:flex-row items-center md:items-start space-y-3 md:space-y-0 md:space-x-3"
           >
             <img
@@ -531,10 +547,14 @@
               >
               <span class="text-gray-700 text-xs block">(2023 - 2024)</span>
             </div>
-          </li>
+          </div>
+        </div>
 
-          <!-- Roxy Group -->
-          <li
+        <!-- Roxy Group -->
+        <div
+          class="bg-gray-400 p-6 rounded-lg shadow-lg w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto"
+        >
+          <div
             class="flex flex-col md:flex-row items-center md:items-start space-y-3 md:space-y-0 md:space-x-3"
           >
             <img
@@ -551,8 +571,8 @@
                 >(2024 - Until Now)</span
               >
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -560,138 +580,110 @@
     <!-- Project Section -->
     <div
       id="project"
-      class="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center justify-start pt-24 px-4"
+      class="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center justify-center px-4"
     >
-      <h2
-        class="text-gray-900 text-4xl font-bold mb-10 underline decoration-4 decoration-black dark:decoration-gray-500 text-center"
+      <div
+        class="flex flex-col items-center justify-center w-full max-w-5xl flex-grow"
       >
-        💼 My Projects
-      </h2>
+        <!-- Judul -->
+        <h2
+          class="text-gray-900 text-4xl font-bold mb-10 underline decoration-4 decoration-black dark:decoration-gray-500 text-center"
+        >
+          💼 My Projects
+        </h2>
 
-      <div class="w-full max-w-5xl px-4 flex-grow">
         <!-- Project 1 -->
         <div
-          class="flex flex-col md:flex-row bg-gray-400 p-6 rounded-lg shadow-lg"
+          class="flex flex-col lg:flex-row bg-gray-400 p-6 rounded-lg shadow-lg w-full"
         >
-          <!-- Image -->
-          <div class="w-full md:w-1/2 flex justify-center">
-            <img
-              src="image/Screenshot 2025-03-12 132001.png"
-              alt="Project 1"
-              class="w-full max-h-[400px] object-contain rounded-lg"
-            />
+          <!-- Image Slider -->
+          <div
+            class="w-full lg:w-1/2 flex justify-center relative mb-4 lg:mb-0"
+          >
+            <div
+              class="image-slider w-full max-w-full rounded-lg overflow-hidden"
+              id="imageSlider"
+            >
+              <img
+                src="image/Screenshot 2025-03-12 132001.png"
+                alt="Project Image 1"
+                class="w-full h-auto max-h-[300px] object-contain active"
+              />
+              <img
+                src="image/Screenshot from 2025-03-28 10-57-49.png"
+                alt="Project Image 2"
+                class="w-full h-auto max-h-[300px] object-contain"
+              />
+            </div>
           </div>
 
           <!-- Description -->
-          <div class="p-4 md:w-1/2 flex flex-col justify-between">
-            <div>
-              <h3
-                class="text-2xl font-bold text-gray-900 text-center md:text-left"
-              >
-                OMS E-Commerce Roxy
-              </h3>
-              <p
-                class="text-gray-700 mt-2 text-sm md:text-base text-center md:text-left break-words"
-              >
-                Order Management System (OMS) is a system used to manage the
-                ordering process, from order creation to delivery and
-                completion.
-              </p>
+          <div class="p-4 lg:w-1/2 flex flex-col">
+            <h3 class="text-2xl font-bold text-gray-900 text-center">
+              OMS E-Commerce Roxy
+            </h3>
+            <p
+              class="text-gray-700 mt-2 text-sm md:text-base text-center break-words"
+            >
+              Order Management System (OMS) is a system used to manage the
+              ordering process, from order creation to delivery and completion.
+            </p>
 
-              <!-- Integration -->
-              <div class="mt-6">
-                <h4
-                  class="text-xl font-semibold text-gray-900 text-center md:text-left"
-                >
-                  Integration:
-                </h4>
-                <div
-                  class="flex flex-wrap justify-center md:justify-start mt-4 gap-4"
-                >
-                  <img
-                    src="image/biteship.png"
-                    alt="biteship"
-                    class="max-w-[150px] md:max-w-[200px] h-auto object-contain"
-                  />
-                  <img
-                    src="image/xendit.png"
-                    alt="xendit"
-                    class="max-w-[150px] md:max-w-[200px] h-auto object-contain"
-                  />
-                </div>
+            <!-- Integration -->
+            <div class="mt-4">
+              <h4 class="text-xl font-semibold text-gray-900 text-center">
+                Integration:
+              </h4>
+              <div class="flex flex-wrap justify-center mt-2 gap-2">
+                <img
+                  src="image/biteship.png"
+                  alt="biteship"
+                  class="max-w-[150px] md:max-w-[200px] h-auto object-contain"
+                />
+                <img
+                  src="image/xendit.png"
+                  alt="xendit"
+                  class="max-w-[150px] md:max-w-[200px] h-auto object-contain"
+                />
               </div>
-              <!-- Tech Stack -->
-              <div class="mt-6">
-                <h4
-                  class="text-xl font-semibold text-gray-900 text-center md:text-left"
-                >
-                  Tech Stack:
-                </h4>
-                <div class="relative w-full overflow-hidden">
-                  <div class="flex tech-stack-slider">
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
-                      alt="Golang"
-                      class="w-12 h-12 mx-4"
-                    />
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
-                      alt="Next.js"
-                      class="w-12 h-12 mx-4"
-                    />
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
-                      alt="PostgreSQL"
-                      class="w-12 h-12 mx-4"
-                    />
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
-                      alt="Redis"
-                      class="w-12 h-12 mx-4"
-                    />
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original-wordmark.svg"
-                      alt="Firebase"
-                      class="w-12 h-12 mx-4"
-                    />
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-                      alt="AWS"
-                      class="w-12 h-12 mx-4"
-                    />
-                    <!-- Duplikasi untuk seamless scrolling -->
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
-                      alt="Golang"
-                      class="w-12 h-12 mx-4"
-                    />
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
-                      alt="Next.js"
-                      class="w-12 h-12 mx-4"
-                    />
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
-                      alt="PostgreSQL"
-                      class="w-12 h-12 mx-4"
-                    />
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
-                      alt="Redis"
-                      class="w-12 h-12 mx-4"
-                    />
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original-wordmark.svg"
-                      alt="Firebase"
-                      class="w-12 h-12 mx-4"
-                    />
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-                      alt="AWS"
-                      class="w-12 h-12 mx-4"
-                    />
-                  </div>
-                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="mt-4">
+              <h4 class="text-xl font-semibold text-gray-900 text-center">
+                Tech Stack:
+              </h4>
+              <div class="flex flex-wrap justify-center mt-2 gap-2">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
+                  alt="Golang"
+                  class="w-12 h-12"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg"
+                  alt="Next.js"
+                  class="w-12 h-12"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
+                  alt="PostgreSQL"
+                  class="w-12 h-12"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
+                  alt="Redis"
+                  class="w-12 h-12"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original-wordmark.svg"
+                  alt="Firebase"
+                  class="w-12 h-12"
+                />
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                  alt="AWS"
+                  class="w-12 h-12"
+                />
               </div>
             </div>
           </div>
@@ -700,264 +692,288 @@
     </div>
 
     <style>
-      .tech-stack-container {
-        width: 100%;
-        overflow: hidden;
+      /* Styling Slider */
+      .image-slider {
         position: relative;
-        background: #f8f9fa;
-        padding: 10px 0;
-      }
-
-      .tech-stack-slider {
+        width: 100%;
+        max-height: 100vh;
         display: flex;
-        gap: 30px;
-        white-space: nowrap;
-        animation: scrollLeft 10s linear infinite;
+        justify-content: center;
+        align-items: center;
       }
 
-      .tech-icon {
-        width: 60px;
-        height: 60px;
+      .image-slider img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
         object-fit: contain;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        position: absolute;
+        border-radius: 16px;
       }
 
-      /* Animasi */
-      @keyframes scrollLeft {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(-50%);
-        }
+      .image-slider img.active {
+        opacity: 1;
+        position: relative;
       }
     </style>
 
-    <!-- Section Skills -->
-    <div
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll("#imageSlider img");
+        let index = 0;
+        let interval;
+
+        function startSlideshow() {
+          interval = setInterval(() => {
+            images[index].classList.remove("active");
+            index = (index + 1) % images.length;
+            images[index].classList.add("active");
+          }, 3000);
+        }
+
+        function stopSlideshow() {
+          clearInterval(interval);
+        }
+
+        document
+          .getElementById("imageSlider")
+          .addEventListener("mouseenter", stopSlideshow);
+        document
+          .getElementById("imageSlider")
+          .addEventListener("mouseleave", startSlideshow);
+
+        // Set gambar pertama aktif
+        images[0].classList.add("active");
+
+        // Mulai slider
+        startSlideshow();
+      });
+    </script>
+
+    <section
       id="skills"
-      class="relative min-h-screen flex flex-col items-center justify-start pt-24 px-4 bg-gradient-to-br from-white via-gray-100 to-gray-300"
+      class="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center pt-24 relative overflow-hidden"
     >
+      <!-- Judul -->
       <h2
-        class="text-gray-900 text-3xl md:text-4xl font-bold mb-6 underline decoration-4 decoration-black dark:decoration-gray-500"
+        class="text-gray-900 text-3xl md:text-4xl font-bold mb-12 underline decoration-4 decoration-black dark:decoration-gray-500 z-50 relative"
       >
         🛠️ Skills
       </h2>
 
-      <div class="logo-container w-full overflow-hidden relative">
-        <div class="logo-track flex items-center gap-8 min-w-max">
-          <!-- Logo list -->
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
-            alt="Golang"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
-            alt="Redis"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
-            alt="PostgreSQL"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
-            alt="HTML"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"
-            alt="CSS"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"
-            alt="Docker"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"
-            alt="Java"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-            alt="JavaScript"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"
-            alt="Git"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-            alt="Linux"
-          />
-          <!-- duplicate -->
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
-            alt="Golang"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
-            alt="Redis"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
-            alt="PostgreSQL"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
-            alt="HTML"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"
-            alt="CSS"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"
-            alt="Docker"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"
-            alt="Java"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-            alt="JavaScript"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"
-            alt="Git"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-            alt="Linux"
-          />
-          <!-- duplicate -->
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
-            alt="Golang"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
-            alt="Redis"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
-            alt="PostgreSQL"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
-            alt="HTML"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"
-            alt="CSS"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"
-            alt="Docker"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"
-            alt="Java"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-            alt="JavaScript"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"
-            alt="Git"
-          />
-          <img
-            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-            alt="Linux"
-          />
+      <!-- Orbit Container -->
+      <div
+        class="orbit-container relative aspect-square w-[200px] sm:w-96 md:w-[500px] flex items-center justify-center z-10 mt-[10rem] sm:mt-10"
+      >
+        <!-- Brain icon -->
+        <div class="brain-logo">🧠</div>
+
+        <!-- Orbit paths -->
+        <div class="absolute inset-0 flex items-center justify-center z-0">
+          <div class="orbit-path" style="--radius: 60px"></div>
+          <div class="orbit-path" style="--radius: 90px"></div>
+          <div class="orbit-path" style="--radius: 120px"></div>
+          <div class="orbit-path" style="--radius: 150px"></div>
+          <div class="orbit-path" style="--radius: 180px"></div>
+          <div class="orbit-path" style="--radius: 210px"></div>
+          <div class="orbit-path" style="--radius: 240px"></div>
+          <div class="orbit-path" style="--radius: 270px"></div>
+        </div>
+
+        <!-- Orbiting Logos -->
+        <div class="orbit" style="--radius: 60px; --angle: 0deg">
+          <div class="orbit-inner">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+              alt="HTML"
+            />
+          </div>
+        </div>
+        <div class="orbit" style="--radius: 90px; --angle: 90deg">
+          <div class="orbit-inner">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+              alt="CSS"
+            />
+          </div>
+        </div>
+        <div class="orbit" style="--radius: 120px; --angle: 180deg">
+          <div class="orbit-inner">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JavaScript"
+            />
+          </div>
+        </div>
+        <div class="orbit" style="--radius: 150px; --angle: 270deg">
+          <div class="orbit-inner">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+              alt="Git"
+            />
+          </div>
+        </div>
+        <div class="orbit" style="--radius: 180px; --angle: 45deg">
+          <div class="orbit-inner">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
+              alt="Go"
+            />
+          </div>
+        </div>
+        <div class="orbit" style="--radius: 210px; --angle: 135deg">
+          <div class="orbit-inner">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+              alt="PostgreSQL"
+            />
+          </div>
+        </div>
+        <div class="orbit" style="--radius: 240px; --angle: 225deg">
+          <div class="orbit-inner">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
+              alt="Redis"
+            />
+          </div>
+        </div>
+        <div class="orbit" style="--radius: 270px; --angle: 315deg">
+          <div class="orbit-inner">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+              alt="Linux"
+            />
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Footer dengan SVG Ombak -->
-      <footer class="absolute bottom-0 left-0 w-full">
-        <svg
-          class="w-full"
-          viewBox="0 0 1440 320"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill="#1f2937"
-            fill-opacity="1"
-            d="M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,234.7C672,245,768,235,864,202.7C960,171,1056,117,1152,117.3C1248,117,1344,171,1392,197.3L1440,224V320H0Z"
-          ></path>
-          <text
-            x="50%"
-            y="90%"
-            text-anchor="middle"
-            font-size="20"
-            fill="white"
-            font-family="Arial, sans-serif"
-          >
-            © 2025 Rahman Umardi. All rights reserved.
-          </text>
-        </svg>
-      </footer>
+    <style>
+      .brain-logo {
+        position: absolute;
+        z-index: 20;
+        font-size: 4rem;
+        color: #fff;
+        text-shadow: 0 0 10px #ffd900, 0 0 20px #ffd900, 0 0 40px #ffd900,
+          0 0 80px #ffd900;
+        animation: pulse-glow 2s infinite ease-in-out;
+      }
 
-      <style>
-        .logo-container {
-          width: 100%;
-          max-width: 800px;
-          overflow: hidden;
-          position: relative;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          text-shadow: 0 0 10px #ffd900, 0 0 20px #ffd900, 0 0 40px #ffd900,
+            0 0 80px #ffd900;
+        }
+        50% {
+          text-shadow: 0 0 20px #ffd900, 0 0 40px #ffd900, 0 0 60px #ffd900,
+            0 0 100px #ffd900;
+        }
+      }
+
+      .orbit-path {
+        position: absolute;
+        width: calc(var(--radius) * 2);
+        height: calc(var(--radius) * 2);
+        border: 1px dashed rgba(0, 0, 0, 0.3);
+        border-radius: 9999px;
+      }
+
+      .orbit {
+        --duration: 20s;
+        --start-angle: var(--angle);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        transform-origin: center;
+        animation: rotate-orbit var(--duration) linear infinite;
+      }
+
+      @keyframes rotate-orbit {
+        from {
+          transform: rotate(var(--start-angle));
+        }
+        to {
+          transform: rotate(calc(var(--start-angle) + 360deg));
+        }
+      }
+
+      .orbit-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 36px;
+        height: 36px;
+        transform: translateX(var(--radius))
+          rotate(calc(-1 * var(--start-angle)));
+        transform-origin: center;
+        animation: counter-rotate var(--duration) linear infinite;
+      }
+
+      @keyframes counter-rotate {
+        from {
+          transform: translateX(var(--radius))
+            rotate(calc(-1 * var(--start-angle)));
+        }
+        to {
+          transform: translateX(var(--radius))
+            rotate(calc(-1 * var(--start-angle) - 360deg));
+        }
+      }
+
+      .orbit-inner img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      #skills {
+        background-image: radial-gradient(#ffffff11 1px, transparent 1px),
+          radial-gradient(#ffffff11 1px, transparent 1px);
+        background-position: 0 0, 25px 25px;
+        background-size: 50px 50px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 640px) {
+        .orbit-path {
+          border-width: 1px;
         }
 
-        .logo-track {
-          display: flex;
-          gap: 1.5rem;
-          animation: scrollLeft 50s linear infinite;
-          animation-play-state: running;
-          width: max-content;
+        .orbit-inner {
+          width: 24px;
+          height: 24px;
         }
 
-        .logo-container:hover .logo-track {
-          animation-play-state: paused;
+        .orbit:nth-child(6) {
+          --radius: 50px;
         }
-
-        @keyframes scrollLeft {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(-100%);
-          }
+        .orbit:nth-child(7) {
+          --radius: 70px;
         }
-      </style>
-    </div>
+        .orbit:nth-child(8) {
+          --radius: 90px;
+        }
+        .orbit:nth-child(9) {
+          --radius: 110px;
+        }
+        .orbit:nth-child(10) {
+          --radius: 130px;
+        }
+        .orbit:nth-child(11) {
+          --radius: 150px;
+        }
+        .orbit:nth-child(12) {
+          --radius: 170px;
+        }
+        .orbit:nth-child(13) {
+          --radius: 190px;
+        }
+      }
+    </style>
   </body>
 </html>
