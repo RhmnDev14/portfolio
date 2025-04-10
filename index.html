@@ -700,15 +700,31 @@
     </div>
 
     <style>
-      .tech-stack-slider {
-        display: flex;
-        animation: scrollLeft 10s linear infinite;
-        width: max-content;
+      .tech-stack-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        background: #f8f9fa;
+        padding: 10px 0;
       }
 
+      .tech-stack-slider {
+        display: flex;
+        gap: 30px;
+        white-space: nowrap;
+        animation: scrollLeft 10s linear infinite;
+      }
+
+      .tech-icon {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+
+      /* Animasi */
       @keyframes scrollLeft {
         from {
-          transform: translateX(0%);
+          transform: translateX(0);
         }
         to {
           transform: translateX(-50%);
@@ -719,7 +735,7 @@
     <!-- Section Skills -->
     <div
       id="skills"
-      class="min-h-screen bg-gradient-to-br from-white via-gray-100 to-gray-300 flex flex-col items-center justify-center pt-24 px-4"
+      class="relative min-h-screen flex flex-col items-center justify-start pt-24 px-4 bg-gradient-to-br from-white via-gray-100 to-gray-300"
     >
       <h2
         class="text-gray-900 text-3xl md:text-4xl font-bold mb-6 underline decoration-4 decoration-black dark:decoration-gray-500"
@@ -729,7 +745,7 @@
 
       <div class="logo-container w-full overflow-hidden relative">
         <div class="logo-track flex items-center gap-8 min-w-max">
-          <!-- Logo list - Duplikasi untuk efek seamless -->
+          <!-- Logo list -->
           <img
             class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
@@ -780,8 +796,58 @@
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
             alt="Linux"
           />
-
-          <!-- Duplikasi logo untuk efek looping seamless -->
+          <!-- duplicate -->
+          <img
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
+            alt="Golang"
+          />
+          <img
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original-wordmark.svg"
+            alt="Redis"
+          />
+          <img
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg"
+            alt="PostgreSQL"
+          />
+          <img
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg"
+            alt="HTML"
+          />
+          <img
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg"
+            alt="CSS"
+          />
+          <img
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg"
+            alt="Docker"
+          />
+          <img
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"
+            alt="Java"
+          />
+          <img
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+            alt="JavaScript"
+          />
+          <img
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg"
+            alt="Git"
+          />
+          <img
+            class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+            alt="Linux"
+          />
+          <!-- duplicate -->
           <img
             class="h-12 sm:h-16 md:h-20 lg:h-24 flex-shrink-0"
             src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg"
@@ -835,18 +901,52 @@
         </div>
       </div>
 
+      <!-- Footer dengan SVG Ombak -->
+      <footer class="absolute bottom-0 left-0 w-full">
+        <svg
+          class="w-full"
+          viewBox="0 0 1440 320"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#1f2937"
+            fill-opacity="1"
+            d="M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,234.7C672,245,768,235,864,202.7C960,171,1056,117,1152,117.3C1248,117,1344,171,1392,197.3L1440,224V320H0Z"
+          ></path>
+          <text
+            x="50%"
+            y="90%"
+            text-anchor="middle"
+            font-size="20"
+            fill="white"
+            font-family="Arial, sans-serif"
+          >
+            © 2025 Rahman Umardi. All rights reserved.
+          </text>
+        </svg>
+      </footer>
+
       <style>
         .logo-container {
           width: 100%;
+          max-width: 800px;
           overflow: hidden;
           position: relative;
-          white-space: nowrap;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
         .logo-track {
           display: flex;
-          gap: 3rem; /* Sesuaikan jarak antar logo */
-          animation: scrollLeft 15s linear infinite;
+          gap: 1.5rem;
+          animation: scrollLeft 50s linear infinite;
+          animation-play-state: running;
+          width: max-content;
+        }
+
+        .logo-container:hover .logo-track {
+          animation-play-state: paused;
         }
 
         @keyframes scrollLeft {
@@ -854,7 +954,7 @@
             transform: translateX(0);
           }
           to {
-            transform: translateX(-50%);
+            transform: translateX(-100%);
           }
         }
       </style>
